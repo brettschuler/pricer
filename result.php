@@ -22,8 +22,8 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "admin", "", "pricer1");
- 
+require_once "config.php";
+  
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -49,9 +49,6 @@ if(mysqli_query($link, $sql)){
 // Close connection
 //mysqli_close($link);
 
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-//$mysqli = new mysqli("35.224.158.153", "admin", "Montana2019", "pricer1");
  
 // Check connection
 //if($mysqli === false){
