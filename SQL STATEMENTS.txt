@@ -1,0 +1,45 @@
+select * from CUSTOMER as c
+
+
+SELECT * FROM HCPCS_TABLE WHERE SHORTDESCRIPTION = '%Cannula nasal%'
+
+
+select * from physician_fee_table WHERE HCPCS = 'A4615'
+
+select * from HCPCS_TABLE where SHORTDESCRIPTION LIKE '%Cannula nasal%'
+
+
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+SELECT DISTINCT HCPCS_TABLE.HCPC,HCPCS_TABLE.SHORTDESCRIPTION, physician_fee_table.HCPCS, AVG(physician_fee_table.FACILITY_FEE)
+FROM HCPCS_TABLE
+INNER JOIN physician_fee_table
+ON HCPCS_TABLE.HCPC = physician_fee_table.HCPCS  
+WHERE HCPCS_TABLE.HCPC  = 'G0076'
+
+SELECT DISTINCT AVG(physician_fee_table.FACILITY_FEE),HCPCS_TABLE.SHORTDESCRIPTION
+FROM HCPCS_TABLE
+INNER JOIN physician_fee_table
+ON HCPCS_TABLE.HCPC = physician_fee_table.HCPCS  
+WHERE HCPCS_TABLE.HCPC  = 'G0076'
+GROUP BY HCPCS_TABLE.SHORTDESCRIPTION,physician_fee_table.FACILITY_FEE
+
+SELECT DISTINCT AVG(physician_fee_table.FACILITY_FEE)
+FROM HCPCS_TABLE
+INNER JOIN physician_fee_table
+ON HCPCS_TABLE.HCPC = physician_fee_table.HCPCS  
+WHERE HCPCS_TABLE.SHORTDESCRIPTION  = 'Care manag h vst new pt 20 m'
+GROUP BY 
+
+CREATE TABLE CUSTOMER (
+    ID int NOT NULL AUTO_INCREMENT,
+    first_name varchar(255),
+    last_name varchar(255),
+    zipcode varchar(255),
+    occupation varchar(3000),
+	diagnosis varchar(5000),
+	PRIMARY KEY ( ID )
+);

@@ -1,0 +1,16 @@
+ .page-header {
+		background-color: #2a2a72;
+		background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); 
+		color:white;
+    }
+
+ .body{
+        font-family: Arial, sans-serif;
+    }
+	
+ .search-box{
+        width: 300px;
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+    }
